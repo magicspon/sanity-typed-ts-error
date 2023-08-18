@@ -1,0 +1,98 @@
+{
+  "name": "hubx",
+  "private": true,
+  "author": {
+    "email": "hello@spon.io",
+    "name": "Dave Stockley",
+    "url": "https://spon.io"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@1.22.17",
+  "scripts": {
+    "dev": "turbo dev --parallel --filter=!./packages/email/.react-email",
+    "start": "turbo run start --filter=@hubx/platform",
+    "start:ci": "INSECURE_AUTH=true turbo run start",
+    "build": "turbo build --filter=@hubx/platform",
+    "new:component": "hygen component with-prompt",
+    "new:page": "hygen page with-prompt",
+    "new:context": "hygen context with-prompt",
+    "new:hook": "hygen hook with-prompt",
+    "new:store": "hygen store with-prompt",
+    "up": "docker compose up -d",
+    "down": "docker compose down --volumes --remove-orphans",
+    "generate": "cd packages/db; yarn generate",
+    "prisma:migrate": "cd packages/db; yarn prisma:migrate",
+    "prisma:push": "cd packages/db; yarn prisma:push",
+    "prisma:deploy": "cd packages/db; yarn prisma:deploy",
+    "prisma:seed": "cd packages/db; yarn prisma:seed",
+    "prisma:reset": "cd packages/db; yarn prisma:reset",
+    "clean:workspaces": "turbo clean",
+    "clean": "rm -rf node_modules",
+    "pretest": "yarn prisma:reset --force",
+    "test": "turbo test -- --passWithNoTests",
+    "lint": "turbo lint && manypkg check",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,css}\"",
+    "prepare": "husky install",
+    "storybook": "turbo run storybook --filter=@hubx/ui",
+    "build-storybook": "turbo run build-storybook --filter=@hubx/ui",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run  --browser chrome",
+    "release": "lerna version --conventional-commits",
+    "seed-search": "cd packages/db; ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-algolia.ts"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/config-lerna-scopes": "^17.7.0",
+    "@cypress-audit/lighthouse": "^1.4.2",
+    "@cypress-audit/pa11y": "^1.4.2",
+    "@cypress/webpack-dev-server": "^3.5.2",
+    "@manypkg/cli": "^0.21.0",
+    "@testing-library/cypress": "^9.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "commitlint": "^17.7.1",
+    "cypress": "^12.17.4",
+    "cypress-axe": "^1.4.0",
+    "husky": "^8.0.3",
+    "hygen": "^6.2.11",
+    "lerna": "^7.1.5",
+    "lerna-changelog": "^2.2.0",
+    "lint-staged": "^14.0.0",
+    "pa11y-ci": "^3.0.1",
+    "prettier": "^3.0.2",
+    "react-test-renderer": "^18.2.0",
+    "tailwindcss": "^3.2.4",
+    "turbo": "^1.10.12",
+    "webpack": "^5.86.0"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": "^1.2"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "yarn": "1.22.17"
+  },
+  "quokka": {
+    "babel": {
+      "env": "test",
+      "polyfill": false
+    },
+    "installPackageCommand": "yarn add {packageName}",
+    "env": {
+      "params": {
+        "env": "NODE_ENV=test"
+      }
+    }
+  },
+  "jest": {
+    "preset": "@hubx/jest-config"
+  },
+  "prisma": {
+    "schema": "packages/db/prisma/schema.prisma"
+  }
+}

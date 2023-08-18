@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": "./",
+    "paths": {
+      "~*": ["src/*"],
+      "@ui/*": ["../../packages/ui/src/*"],
+      "@hubx/email/*": ["../../packages/email/*"],
+      "@cms/*": ["../../apps/cms/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "types": ["@cypress-audit/lighthouse", "@cypress-audit/pa11y"],
+  "include": [
+    "cypress.d.ts",
+    "next-env.d.ts",
+    "**/*.d.ts",
+    "**/*.d.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.xml/*.tsx",
+    "*.config.js",
+    "*.config.mjs",
+    "*.config.cjs",
+    "packages/config/eslint/index.js"
+  ]
+}

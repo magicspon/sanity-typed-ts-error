@@ -1,0 +1,6 @@
+{
+  "extends": ["@hubx/eslint-config"],
+  "rules": {
+    "no-html-link-for-pages": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@hubx/cms",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "__dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@portabletext/react": "^3.0.4",
+    "@sanity-typed/client": "^1.0.4",
+    "@sanity-typed/types": "^4.0.4",
+    "@sanity/client": "^6.4.6",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "3.2.3",
+    "get-youtube-id": "^1.0.1",
+    "next-sanity": "^5.4.0",
+    "next-sanity-image": "^6.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
+    "sanity": "3.2.3",
+    "sanity-plugin-asset-source-unsplash": "^1.1.0",
+    "sanity-plugin-iframe-pane": "^2.5.5",
+    "sanity-plugin-media": "^2.2.2",
+    "slugify": "^1.6.6",
+    "styled-components": "^6.0.7",
+    "zod": "^3.22.1"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^3.0.0",
+    "@types/react": "18.2.20",
+    "@types/styled-components": "^5.1.26",
+    "eslint": "8.47.0",
+    "typescript": "^5.1.3"
+  }
+}

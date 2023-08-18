@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "next": {
+      "rootDir": "./src/pages"
+    }
+  },
+  "root": true,
+  "extends": ["next/core-web-vitals", "@hubx/eslint-config"]
+}
