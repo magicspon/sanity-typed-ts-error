@@ -6,7 +6,7 @@ import { PreviewProvider } from '@hubx/cms/components/PreviewProvider'
 import { useLiveQuery } from 'next-sanity/preview'
 import { useRouter } from 'next/router'
 
-function PreviewDocumentsCount({ post: initialData }: Pick<Props, 'post'>) {
+function Page({ post: initialData }: Pick<Props, 'post'>) {
   const params = useRouter().query
   const [data] = useLiveQuery(initialData, postQuery, { slug: params.post })
 
@@ -20,11 +20,11 @@ export default function Posts({
   if (token) {
     return (
       <PreviewProvider token={token}>
-        <PreviewDocumentsCount post={post} />
+        <Page post={post} />
       </PreviewProvider>
     )
   }
-  return <PreviewDocumentsCount post={post} />
+  return <Page post={post} />
 }
 
 type Props = {

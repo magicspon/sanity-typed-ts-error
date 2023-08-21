@@ -13,7 +13,7 @@ export function PreviewProvider({
   const client = React.useMemo(() => getClient(token), [token])
 
   return (
-    <LiveQueryProvider client={client as any}>
+    <LiveQueryProvider client={client}>
       {children}
       <div className="bg-dark text-white p-5 absolute top-0 left-0 z-40">
         <a className="text-sm" href="/api/exit-preview">
