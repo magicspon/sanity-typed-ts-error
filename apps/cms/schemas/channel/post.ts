@@ -1,11 +1,9 @@
-// import { defineArrayMember, defineField, defineType } from "sanity";
 import { defineArrayMember, defineField, defineType } from '@sanity-typed/types'
 import { block, teaser } from '../fields/block'
 import slugify from 'slugify'
 import { image } from '../fields/image'
 import { meta, openGraph } from '../fields/seo'
 
-/** No changes using defineType, defineField, and defineArrayMember https://www.sanity.io/docs/schema-field-types#e5642a3e8506 */
 export const post = defineType({
   name: 'post',
   type: 'document',

@@ -1,7 +1,7 @@
 import { defineArrayMember, defineField } from '@sanity-typed/types'
-import { image } from './image'
-import { link, links } from './link'
-import { youtube } from './youtube'
+import { image, imageField } from './image'
+import { link, linkField, linkFieldGroup, links } from './link'
+import { youtube, youtubeField } from './youtube'
 
 export const block = defineField({
   name: 'block',
@@ -30,10 +30,12 @@ export const block = defineField({
         ],
       },
     }),
-    image,
-    link,
-    links,
-    youtube,
+    defineArrayMember(imageField),
+    defineArrayMember(youtubeField),
+    defineArrayMember(linkField),
+    defineArrayMember(linkFieldGroup),
+    // link,
+    // links,
     defineArrayMember({
       name: 'form',
       title: 'Form',

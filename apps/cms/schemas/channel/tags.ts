@@ -1,8 +1,6 @@
-// import { defineArrayMember, defineField, defineType } from "sanity";
 import { defineField, defineType } from '@sanity-typed/types'
 import slugify from 'slugify'
 
-/** No changes using defineType, defineField, and defineArrayMember https://www.sanity.io/docs/schema-field-types#e5642a3e8506 */
 export const tags = defineType({
   name: 'tags',
   type: 'document',

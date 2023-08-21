@@ -104,7 +104,7 @@ const select = defineField({
   hidden: ({ parent }) => parent?.type !== 'select',
 })
 
-const row = defineField({
+const row = defineArrayMember({
   name: 'field',
   title: 'Field',
   type: 'object',
@@ -147,10 +147,10 @@ export const form = defineField({
       type: 'string',
       initialValue: 'Submit',
     }),
-    // defineField({
-    //   ...teaser,
-    //   title: 'Feedback text',
-    // }),
+    defineField({
+      ...teaser,
+      title: 'Feedback text',
+    }),
     defineField({
       name: 'notify',
       title: 'Notify',

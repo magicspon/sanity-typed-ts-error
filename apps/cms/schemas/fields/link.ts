@@ -1,6 +1,6 @@
 import { defineArrayMember, defineField } from '@sanity-typed/types'
 
-export const link = defineField({
+export const linkField = {
   name: 'link',
   type: 'object',
   title: 'Link',
@@ -35,9 +35,11 @@ export const link = defineField({
       hidden: ({ parent, value }) => !value && !!parent?.url,
     }),
   ],
-})
+}
 
-export const links = defineField({
+export const link = defineField(linkField)
+
+export const linkFieldGroup = {
   name: 'linksGroup',
   type: 'object',
   title: 'Group of links',
@@ -45,7 +47,9 @@ export const links = defineField({
     {
       type: 'array',
       name: 'links',
-      of: [link],
+      of: [defineArrayMember(link)],
     },
   ],
-})
+}
+
+export const links = defineField(linkFieldGroup)
